@@ -19,7 +19,7 @@ const Coin = () => {
       },
     };
 
-    fetch(`https://thingproxy.freeboard.io/fetch/https://api.coingecko.com/api/v3/coins/${coinId}`, options)
+    fetch(`https://api.coingecko.com/api/v3/coins/${coinId}`, options)
       .then((res) => res.json())
       .then((res) => setCoinData(res))
       .catch((err) => console.error(err));
@@ -35,7 +35,7 @@ const Coin = () => {
     };
 
     fetch(
-      `https://thingproxy.freeboard.io/fetch/https://api.coingecko.com/api/v3/coins/${coinId}/market_chart?vs_currency=${currency.name}&days=10&interval=daily`,
+      `https://api.coingecko.com/api/v3/coins/${coinId}/market_chart?vs_currency=${currency.name}&days=10&interval=daily`,
       options
     )
       .then((res) => res.json())
